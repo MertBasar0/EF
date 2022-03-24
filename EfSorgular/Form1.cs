@@ -39,7 +39,7 @@ namespace EfSorgular
             //}).ToList();
 
             #endregion
-
+            
 
             #region Linq to Sql
 
@@ -85,6 +85,103 @@ namespace EfSorgular
             }).ToList();
 
             #endregion
+        }
+
+        private void btn_Sorgu4_Click(object sender, EventArgs e)
+        {
+            int kateforyId = db.Categories.FirstOrDefault(x => x.CategoryName == "Beverages").CategoryID;
+
+            Products urun = new Products();
+            urun.CategoryID = kateforyId;
+            urun.ProductName = "Kablo";
+            urun.UnitPrice = 5;
+            urun.UnitsInStock = 500;
+
+            db.Products.Add(urun);
+            db.SaveChanges();
+
+            #region 2.Yol
+
+            db.Products.Add(new Products
+            {
+                ProductName = "VGA",
+                UnitPrice = 8,
+                UnitsInStock = 800,
+                CategoryID = db.Categories.FirstOrDefault(x=>x.CategoryName == "Beverages").CategoryID
+
+            });
+            db.SaveChanges();
+
+            #endregion
+
+            #region 3.yol
+            db.Categories.FirstOrDefault(x => x.CategoryName == "Beverages").Products.Add(new Products
+            {
+                ProductName = "HDMI",
+                UnitPrice = 60,
+                UnitsInStock = 200
+            });
+            db.SaveChanges();
+
+            dgvSorgular.DataSource = db.Products.Where(x=>x.Categories.CategoryID == kateforyId);
+            #endregion
+        }
+
+        private void btn_Sorgu5_Click(object sender, EventArgs e)
+        {
+            //Çalışanların adını, soyadını, doğum tarihlerini ve yaşını getiren bir sorgu yazınız.
+
+            #region linq to entity
+
+            //dgvSorgular.DataSource = db.Employees.Select(x => new
+            //{
+            //    Adi = x.FirstName,
+            //    Soyadi = x.LastName,
+            //    DogumTarihi = x.BirthDate,
+            //    Yasi = System.Data.Objects.SqlClient.SqlFunctions.DateDiff("year", x.BirthDate, DateTime.Now)
+
+            //}).ToList();
+
+            #endregion
+
+
+
+            #region linq to sql
+
+            dgvSorgular.DataSource =  (from x in db.Employees
+                                      select new
+                                      {
+                                          adiSoyadi = x.FirstName + " " + x.LastName,
+                                          DogumTarihi = x.BirthDate,
+                                          Yasi = System.Data.Objects.SqlClient.SqlFunctions.DateDiff("year",x.BirthDate,DateTime.Now)
+                                      }).ToList();
+
+            #endregion
+        }
+
+        private void btn_sorgu6_Click(object sender, EventArgs e)
+        {
+            //Kategorilerine göre stoktaki ürün sayısını veren sorguyu yazınız.
+            #region linq to entity
+            //dgvSorgular.DataSource = db.Products.GroupBy(x => x.Categories.CategoryName).Select(z => new
+            //{
+            //    KategoriAdi = z.Key,
+            //    UrunAdet = z.Sum(x=> x.UnitsInStock)
+            //}).ToList();
+
+
+            #endregion
+
+
+            var sonuc = from x in db.Products
+                        group x by x.Categories.CategoryName into g
+                        select new
+                        {
+                            KategoriAdi = g.Key,
+                            ToplamStokAdet = g.Sum(x=> x.UnitsInStock)
+                        };
+            dgvSorgular.DataSource = sonuc.ToList();
+
         }
     }
 }

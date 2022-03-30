@@ -31,6 +31,9 @@
             this.btn_sorguBir = new System.Windows.Forms.Button();
             this.dgvSorgular = new System.Windows.Forms.DataGridView();
             this.btn_sorgu2 = new System.Windows.Forms.Button();
+            this.btn_Sorgu4 = new System.Windows.Forms.Button();
+            this.btn_Sorgu5 = new System.Windows.Forms.Button();
+            this.btn_sorgu6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSorgular)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,12 +65,45 @@
             this.btn_sorgu2.UseVisualStyleBackColor = true;
             this.btn_sorgu2.Click += new System.EventHandler(this.btn_sorgu2_Click);
             // 
+            // btn_Sorgu4
+            // 
+            this.btn_Sorgu4.Location = new System.Drawing.Point(441, 12);
+            this.btn_Sorgu4.Name = "btn_Sorgu4";
+            this.btn_Sorgu4.Size = new System.Drawing.Size(114, 49);
+            this.btn_Sorgu4.TabIndex = 0;
+            this.btn_Sorgu4.Text = "Sorgu4";
+            this.btn_Sorgu4.UseVisualStyleBackColor = true;
+            this.btn_Sorgu4.Click += new System.EventHandler(this.btn_Sorgu4_Click);
+            // 
+            // btn_Sorgu5
+            // 
+            this.btn_Sorgu5.Location = new System.Drawing.Point(561, 12);
+            this.btn_Sorgu5.Name = "btn_Sorgu5";
+            this.btn_Sorgu5.Size = new System.Drawing.Size(114, 49);
+            this.btn_Sorgu5.TabIndex = 0;
+            this.btn_Sorgu5.Text = "Sorgu5";
+            this.btn_Sorgu5.UseVisualStyleBackColor = true;
+            this.btn_Sorgu5.Click += new System.EventHandler(this.btn_Sorgu5_Click);
+            // 
+            // btn_sorgu6
+            // 
+            this.btn_sorgu6.Location = new System.Drawing.Point(677, 12);
+            this.btn_sorgu6.Name = "btn_sorgu6";
+            this.btn_sorgu6.Size = new System.Drawing.Size(114, 49);
+            this.btn_sorgu6.TabIndex = 0;
+            this.btn_sorgu6.Text = "Sorgu6";
+            this.btn_sorgu6.UseVisualStyleBackColor = true;
+            this.btn_sorgu6.Click += new System.EventHandler(this.btn_sorgu6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvSorgular);
+            this.Controls.Add(this.btn_sorgu6);
+            this.Controls.Add(this.btn_Sorgu5);
+            this.Controls.Add(this.btn_Sorgu4);
             this.Controls.Add(this.btn_sorgu2);
             this.Controls.Add(this.btn_sorguBir);
             this.Name = "Form1";
@@ -82,6 +118,9 @@
         private System.Windows.Forms.Button btn_sorguBir;
         private System.Windows.Forms.DataGridView dgvSorgular;
         private System.Windows.Forms.Button btn_sorgu2;
+        private System.Windows.Forms.Button btn_Sorgu4;
+        private System.Windows.Forms.Button btn_Sorgu5;
+        private System.Windows.Forms.Button btn_sorgu6;
     }
 }
 

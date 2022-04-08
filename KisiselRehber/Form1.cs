@@ -51,8 +51,10 @@ namespace KisiselRehber
 
         private void KisiListele()
         {
+            lst_Kisiler.Items.Clear();
             foreach (var kisi in db.Kisilers.ToList())
             {
+               
                 ListViewItem listItem = new ListViewItem();
                 listItem.Text = kisi.Id.ToString();
                 listItem.SubItems.Add(kisi.Ad);
@@ -63,21 +65,63 @@ namespace KisiselRehber
                 lst_Kisiler.Items.Add(listItem);
             }           
         }
+        Kisiler guncellenecek;
 
         private void lst_Kisiler_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int index = lst_Kisiler.SelectedItems[0].Index;
+            guncellenecek = lst_Kisiler.SelectedItems[0].Tag as Kisiler;
 
+            txtAd.Text = guncellenecek.Ad;
+            txtSoyad.Text = guncellenecek.Soyad;
+            mskTel.Text = guncellenecek.Telefon;
                 
         }
 
 
         private void KisiListele(string param)
         {
+            lst_Kisiler.Items.Clear();
             foreach (var kisi in db.Kisilers.Where(x=> x.Ad.StartsWith(param) || x.Soyad.StartsWith(param) 
             || x.Ad.EndsWith(param) ||x.Soyad.EndsWith(param)).ToList())
             {
+                
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = kisi.Id.ToString();
+                lvi.SubItems.Add(kisi.Ad);
+                lvi.SubItems.Add(kisi.Soyad);
+                lvi.SubItems.Add(kisi.Telefon);
+                lvi.Tag = kisi;
 
+                lst_Kisiler.Items.Add(lvi);
+            }
+        }
+
+        private void txtKisiAra_TextChanged(object sender, EventArgs e)
+        {
+            KisiListele(txtKisiAra.Text);
+        }
+
+        private void btn_guncelle_Click(object sender, EventArgs e)
+        {
+            guncellenecek.Ad = txtAd.Text;
+            guncellenecek.Soyad = txtSoyad.Text;
+            guncellenecek.Telefon = mskTel.Text;
+
+            db.SaveChanges();
+            KisiListele();
+            Temizle();
+        }
+
+        private void btn_Sil_Click(object sender, EventArgs e)
+        {
+            if (lst_Kisiler.SelectedItems.Count <= 0) return; // Bir şey seçili değilse,
+            {
+                int id = ((Kisiler)lst_Kisiler.SelectedItems[0].Tag).Id;
+                Kisiler silinecekKisi = db.Kisilers.Find(id);
+                db.Kisilers.Remove(silinecekKisi);
+                db.SaveChanges();
+                KisiListele();
             }
         }
     }

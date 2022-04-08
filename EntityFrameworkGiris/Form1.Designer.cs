@@ -30,7 +30,9 @@
         {
             this.dgv_sonuclar = new System.Windows.Forms.DataGridView();
             this.btn_musteriGetir = new System.Windows.Forms.Button();
+            this.dgv_sonuclar2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sonuclar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sonuclar2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_sonuclar
@@ -38,7 +40,7 @@
             this.dgv_sonuclar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sonuclar.Location = new System.Drawing.Point(12, 146);
             this.dgv_sonuclar.Name = "dgv_sonuclar";
-            this.dgv_sonuclar.Size = new System.Drawing.Size(1145, 427);
+            this.dgv_sonuclar.Size = new System.Drawing.Size(639, 427);
             this.dgv_sonuclar.TabIndex = 0;
             // 
             // btn_musteriGetir
@@ -51,16 +53,26 @@
             this.btn_musteriGetir.UseVisualStyleBackColor = true;
             this.btn_musteriGetir.Click += new System.EventHandler(this.btn_musteriGetir_Click);
             // 
+            // dgv_sonuclar2
+            // 
+            this.dgv_sonuclar2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sonuclar2.Location = new System.Drawing.Point(657, 146);
+            this.dgv_sonuclar2.Name = "dgv_sonuclar2";
+            this.dgv_sonuclar2.Size = new System.Drawing.Size(639, 427);
+            this.dgv_sonuclar2.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1375, 584);
+            this.ClientSize = new System.Drawing.Size(1341, 583);
             this.Controls.Add(this.btn_musteriGetir);
+            this.Controls.Add(this.dgv_sonuclar2);
             this.Controls.Add(this.dgv_sonuclar);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sonuclar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sonuclar2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.DataGridView dgv_sonuclar;
         private System.Windows.Forms.Button btn_musteriGetir;
+        private System.Windows.Forms.DataGridView dgv_sonuclar2;
     }
 }
 

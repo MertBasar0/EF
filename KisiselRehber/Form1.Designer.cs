@@ -45,11 +45,13 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_Sil = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_Sil);
             this.groupBox1.Controls.Add(this.btn_guncelle);
             this.groupBox1.Controls.Add(this.btn_Kaydet);
             this.groupBox1.Controls.Add(this.txtKisiAra);
@@ -75,6 +77,7 @@
             this.btn_guncelle.TabIndex = 4;
             this.btn_guncelle.Text = "Güncelle";
             this.btn_guncelle.UseVisualStyleBackColor = true;
+            this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
             // 
             // btn_Kaydet
             // 
@@ -92,6 +95,7 @@
             this.txtKisiAra.Name = "txtKisiAra";
             this.txtKisiAra.Size = new System.Drawing.Size(142, 20);
             this.txtKisiAra.TabIndex = 3;
+            this.txtKisiAra.TextChanged += new System.EventHandler(this.txtKisiAra_TextChanged);
             // 
             // mskTel
             // 
@@ -188,6 +192,16 @@
             this.columnHeader4.Text = "Telefon";
             this.columnHeader4.Width = 187;
             // 
+            // btn_Sil
+            // 
+            this.btn_Sil.Location = new System.Drawing.Point(343, 149);
+            this.btn_Sil.Name = "btn_Sil";
+            this.btn_Sil.Size = new System.Drawing.Size(75, 23);
+            this.btn_Sil.TabIndex = 5;
+            this.btn_Sil.Text = "Sil";
+            this.btn_Sil.UseVisualStyleBackColor = true;
+            this.btn_Sil.Click += new System.EventHandler(this.btn_Sil_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +237,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btn_Sil;
     }
 }
 

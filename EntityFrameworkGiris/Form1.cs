@@ -17,7 +17,7 @@ namespace EntityFrameworkGiris
         {
             InitializeComponent();
         }
-        //Entity Framework => database in taşınmasına projeye entegre eden bir freamworkdür. EF 'ün 3 yapısı vardır. Bunlar;
+        //Entity Framework => database in taşınmasına, projeye entegre eden bir freamworkdür. EF 'ün 3 yapısı vardır. Bunlar;
         //DatabaseFirst yaklaşımı (şuan kullandığımız) => hazır bir db var ise ve bunu kullanacak iseniz o dbnin yansımasını
         //uygulamaya yansıtır. (yeni veritabanındaki tabloları projenize class olarak genereate eder. Kod tarafından bu
         // yansıma üzerinde çalışır. Çok büyük yapılarda db'lerde yavaşlamalar olabilir.)
@@ -69,7 +69,7 @@ namespace EntityFrameworkGiris
             NorthwindEntities db = new NorthwindEntities();
 
             dgv_sonuclar.DataSource = db.Customers.ToList();
-            dgv_sonuclar.DataSource = db.Products.ToList();
+            dgv_sonuclar2.DataSource = db.Products.ToList();
 
 
         }

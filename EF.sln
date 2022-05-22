@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tekrar", "Tekrar", "{1A5AE4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkGirisTekrar", "EntityFrameworkGirisTekrar\EntityFrameworkGirisTekrar.csproj", "{1E11C5C1-DD6F-4382-8202-F752B3F4F81B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstRepo", "CodeFirstRepo\CodeFirstRepo.csproj", "{D4F1F58F-9D11-4302-88DF-655D786862A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfMapping", "EfMapping\EfMapping.csproj", "{4E99C434-48F3-43EF-AFFA-08CD23AE8804}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{1E11C5C1-DD6F-4382-8202-F752B3F4F81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E11C5C1-DD6F-4382-8202-F752B3F4F81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E11C5C1-DD6F-4382-8202-F752B3F4F81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F1F58F-9D11-4302-88DF-655D786862A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F1F58F-9D11-4302-88DF-655D786862A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F1F58F-9D11-4302-88DF-655D786862A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F1F58F-9D11-4302-88DF-655D786862A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E99C434-48F3-43EF-AFFA-08CD23AE8804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E99C434-48F3-43EF-AFFA-08CD23AE8804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E99C434-48F3-43EF-AFFA-08CD23AE8804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E99C434-48F3-43EF-AFFA-08CD23AE8804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
